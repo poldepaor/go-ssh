@@ -40,7 +40,7 @@ func main() {
 }
 
 func logger(s string) {
-	file, err := os.OpenFile("ssh.log", os.O_CREATE|os.O_APPEND, 0666)
+	file, err := os.OpenFile("ssh.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	defer file.Close()
 	if err != nil {
 		fmt.Println("Error opening ssh log file")
